@@ -16,6 +16,28 @@ public class Linkedlist<T> {
 
     }
 
+    //inserting elements after a specific node
+    public void insertAfter(T existingData, T newData) {
+        Node<T> newNode = new Node<>(newData);
+
+        //if the list is empty
+        if (head == null) {
+            return;
+        }
+
+        //traverse the list to find the node with existingData
+        Node<T> curr = head;
+        while (curr != null && !curr.data.equals(existingData)) {
+            curr = curr.next;
+        }
+
+        //if the node with existingData is found, insert the new node after it
+        if (curr != null) {
+            newNode.next = curr.next;
+            curr.next = newNode;
+        }
+    }
+
     //to add elements in the end of the list
     public void appendEnd(T data) {
         Node<T> newNode = new Node<>(data);
