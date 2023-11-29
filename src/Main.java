@@ -3,19 +3,22 @@ public class Main {
         System.out.println("LINKEDLIST IMPLEMENTATION");
 
         //create a simple Linked List of 56, 30 and 70
-        Node<Integer> node1 = new Node<>(56);
-        Node<Integer> node2 = new Node<>(30);
-        Node<Integer> node3 = new Node<>(70);
+        Linkedlist<Integer> intLinkedlist = new Linkedlist<>();
+        Linkedlist<Integer> intLinkedlist2 = new Linkedlist<>();
 
-        node1.next = node2;
-        node2.next = node3;
+        intLinkedlist.appendFirst(70);
+        intLinkedlist.appendFirst(30);
+        intLinkedlist.appendFirst(56);
 
-        Node<Integer> curr = node1;
+        System.out.println("Adding elements in the beginning of the list:\n");
+        intLinkedlist.printList();  
+        
+        intLinkedlist2.appendEnd(56);
+        intLinkedlist2.appendEnd(30);
+        intLinkedlist2.appendEnd(70);
 
-        while(curr != null){
-            System.out.print(curr.data +" ");
-            curr = curr.next;
-        }
+        System.out.println("\nAdding elements in the end of the list:\n");
+        intLinkedlist2.printList();  
 
     }
 }
