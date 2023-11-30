@@ -29,5 +29,12 @@ public class Main {
         System.out.println("LinkedList after insertion");
         intLinkedlist.insertAfter(30, 40);
         intLinkedlist.printList(); 
+
+        intLinkedlist.deleteAtPos(40);
+
+        System.out.println("\nInteger Linked List elements after deleting 40: ");
+        intLinkedlist.printList();
+
+        System.out.println("\nSize of the integer linked list: " + intLinkedlist.size());
     }
 }

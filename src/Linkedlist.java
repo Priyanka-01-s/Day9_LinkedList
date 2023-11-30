@@ -106,6 +106,45 @@ public class Linkedlist<T> {
         secondToLast.next = null;
     }
 
+     // Method to delete a specific value from the linked list
+     public void deleteAtPos(T value) {
+        // If the list is empty, do nothing
+        if (head == null) {
+            return;
+        }
+
+        //update the head to the next node
+        if (head.data==value) {
+            head = head.next;
+            return;
+        }
+
+        //traverse the list to find the node with the specified value
+        Node<T> current = head;
+        while (current.next != null && !current.next.data.equals(value)) {
+            current = current.next;
+        }
+
+        //if the node with the specified value is found, remove it
+        if (current.next != null) {
+            current.next = current.next.next;
+        }
+    }
+
+    //calculate the size of the linked list
+    public int size() {
+        int count = 0;
+        Node<T> current = head;
+
+        //count each element
+        while (current != null) {
+            count++;
+            current = current.next;
+        }
+
+        return count;
+    }
+
 
     //search elemnet in list 
     public Node<T> search(T data) {
