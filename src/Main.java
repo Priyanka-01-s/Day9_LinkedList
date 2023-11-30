@@ -7,6 +7,7 @@ public class Main {
 
         intLinkedlist.appendEnd(56);
         intLinkedlist.appendEnd(70);
+        intLinkedlist.appendEnd(60);
 
         intLinkedlist.insertAfter(56, 30);
 
@@ -17,5 +18,12 @@ public class Main {
         intLinkedlist.deleteLast();
         intLinkedlist.printList();
 
+        Node<Integer> element = intLinkedlist.search(30);
+        if (element != null) {
+            System.out.println("\nThe element is present in the list.");
+
+        }else{
+            System.out.println("\nThe element is absent in the list");
+        }
     }
 }

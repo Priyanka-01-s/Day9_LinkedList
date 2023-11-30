@@ -77,6 +77,21 @@ public class Linkedlist<T> {
         secondToLast.next = null;
     }
 
+    //search elemnet in list 
+    public Node<T> search(T data) {
+        Node<T> current = head;
+
+        //traverse the list to find the node with the specified value
+        while (current != null) {
+            if (current.data==data) {
+                return current;
+            }
+            current = current.next;
+        }
+
+        return null;
+    }
+
     // print the list
     public void printList() {
         Node<T> current = head;
