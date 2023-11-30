@@ -13,5 +13,9 @@ public class Main {
         System.out.println("LinkedList after insertion");
         intLinkedlist.printList();  
 
+        System.out.println("\nLinkedList after deletion of the first element:");
+        intLinkedlist.deleteFirst();
+        intLinkedlist.printList();
+
     }
 }

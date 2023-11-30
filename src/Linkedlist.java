@@ -55,6 +55,18 @@ public class Linkedlist<T> {
         last.next = newNode;
     }
 
+    //deleting element from the first
+    public void deleteFirst() {
+        // If the list is empty, do nothing
+        if (head == null) {
+            return;
+        }
+
+        // Update the head to be the next node in the list
+        head = head.next;
+    }
+
+
     //print the list
     public void printList(){
         Node<T> current = head;
