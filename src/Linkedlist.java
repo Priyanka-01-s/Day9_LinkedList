@@ -162,6 +162,7 @@ public class Linkedlist<T> {
     }
     
 
+    
     // print the list
     public void printList() {
         Node<T> current = head;
