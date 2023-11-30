@@ -38,6 +38,34 @@ public class Linkedlist<T> {
         }
     }
 
+     //method to insert a new node at a specific position in the linked list
+     public void insertAtPosition(T data, int position) {
+        Node<T> newNode = new Node<>(data);
+
+        //if the position is 0 or negative, insert at the beginning
+        if (position <= 0) {
+            appendFirst(data);
+            return;
+        }
+
+        //traverse the list to find the node at the previous position
+        Node<T> current = head;
+        int currentPosition = 0;
+        while (current != null && currentPosition < position - 1) {
+            current = current.next;
+            currentPosition++;
+        }
+
+        //if the position is beyond the end of the list, insert at the end
+        if (current == null) {
+            appendEnd(data);
+            return;
+        }
+        newNode.next = current.next;
+        current.next = newNode;
+    }
+
+
     // to add elements in the end of the list
     public void appendEnd(T data) {
         Node<T> newNode = new Node<>(data);
@@ -54,6 +82,7 @@ public class Linkedlist<T> {
         }
         last.next = newNode;
     }
+
 
     public void deleteLast() {
         // if the list is empty, do nothing
@@ -77,6 +106,7 @@ public class Linkedlist<T> {
         secondToLast.next = null;
     }
 
+
     //search elemnet in list 
     public Node<T> search(T data) {
         Node<T> current = head;
@@ -91,6 +121,7 @@ public class Linkedlist<T> {
 
         return null;
     }
+    
 
     // print the list
     public void printList() {

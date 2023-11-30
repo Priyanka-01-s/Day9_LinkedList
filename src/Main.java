@@ -9,7 +9,7 @@ public class Main {
         intLinkedlist.appendEnd(70);
         intLinkedlist.appendEnd(60);
 
-        intLinkedlist.insertAfter(56, 30);
+        intLinkedlist.insertAtPosition(30,1);
 
         System.out.println("LinkedList after insertion");
         intLinkedlist.printList();  
@@ -25,5 +25,9 @@ public class Main {
         }else{
             System.out.println("\nThe element is absent in the list");
         }
+
+        System.out.println("LinkedList after insertion");
+        intLinkedlist.insertAfter(30, 40);
+        intLinkedlist.printList(); 
     }
 }
